@@ -1,9 +1,7 @@
-import { ItemListContainer } from "../components/ItemListContainer";
-
 export const Home = () => {
     return (
         <div>
-            <ItemListContainer greeting="Pasando por props" />
+            <h1>Bienvenidos a Nike</h1>
         </div>
     );
 };

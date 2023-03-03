@@ -1,7 +1,26 @@
+import { Link } from "react-router-dom";
+import { BannerHome } from "../assets";
+import { ImageEffect } from "../components/ImageEffect";
+import { ListaRopa } from "../components/ListaRopa";
+import { MorePurchased } from "../components/MorePurchased";
+import { Title } from "../components/Title";
+
 export const Home = () => {
     return (
-        <div>
-            <h1>Bienvenidos a Nike</h1>
+        <div className="flex flex-col gap-5">
+            <div className="-mx-10">
+                <Link to="/categoria/zapatilla/paunMREyXhuQVWoOv5jw">
+                    <img src={BannerHome} alt="" />
+                </Link>
+            </div>
+            <div className="w-full">
+                <Title title="Categorias" />
+                <ImageEffect productData={ListaRopa} showCategory={true} />
+            </div>
+            <div>
+                <Title title="Productos destacados" />
+                <MorePurchased />
+            </div>
         </div>
     );
 };

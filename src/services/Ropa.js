@@ -1,33 +1,55 @@
-import { ropa } from "../components/ListaCopa";
+import {
+    addDoc,
+    collection,
+    doc,
+    getDoc,
+    getDocs,
+    getFirestore,
+    query,
+    where,
+} from "firebase/firestore";
 
 const getAll = async () => {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(ropa);
-        }, [500]);
-    });
+    const db = getFirestore();
+    const productsCollection = collection(db, "itemscollection");
+    const snapshot = await getDocs(productsCollection);
+
+    const products = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+    }));
+
+    return products;
 };
 
-const get = ({ idRopa }) => {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(ropa.find(({ id }) => id === Number(idRopa)));
-        }, [500]);
-    });
+const get = async ({ idRopa }) => {
+    const db = getFirestore();
+    const userDoc = doc(db, "itemscollection", idRopa);
+    const snapshot = await getDoc(userDoc);
+
+    const user = { id: snapshot.id, ...snapshot.data() };
+    return user;
 };
 
-const getDesc = ({ idCategoria }) => {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(
-                ropa.filter(
-                    ({ categoria }) =>
-                        categoria.toLowerCase().trim() ===
-                        idCategoria.toLowerCase().trim()
-                )
-            );
-        }, [500]);
-    });
+const getDesc = async ({ idCategoria }) => {
+    const db = getFirestore();
+    const productsCollection = collection(db, "itemscollection");
+    const q = query(productsCollection, where("categoria", "==", idCategoria));
+    const snapshot = await getDocs(q);
+
+    const categoryResult = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+    }));
+    return categoryResult;
 };
 
-export const usersService = { getAll, get, getDesc };
+const postOrder = async ({ order }) => {
+    const db = getFirestore();
+    const comprarOrder = collection(db, "orderCollection");
+    const orderStatus = await addDoc(comprarOrder, order);
+
+    return orderStatus;
+};
+
+export const usersService = { getAll, get, getDesc, postOrder };

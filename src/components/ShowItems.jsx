@@ -1,9 +1,6 @@
-import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { usersService } from "../services/Ropa";
 
 export const ShowItems = ({ productData2 = [] }) => {
-    const [category, setCategory] = useState([]);
     const { categoria } = useParams();
 
     return (
@@ -12,7 +9,7 @@ export const ShowItems = ({ productData2 = [] }) => {
                 ({ nombre, precio, image_f, id, categoria, image_b }) => (
                     <div
                         key={id}
-                        className="drop-shadow-md w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 relative group "
+                        className="drop-shadow-sm w-full max-w-sm bg-white rounded-lg relative group text-gray-900 hover:scale-[101%] transition-all"
                     >
                         <Link to={`/categoria/${categoria}/${id}`}>
                             <img
@@ -28,11 +25,11 @@ export const ShowItems = ({ productData2 = [] }) => {
                         </Link>
 
                         <div className="px-5 pb-5">
-                            <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white h-14">
+                            <h5 className="text-xl font-semibold tracking-tight text-gray-900  h-14">
                                 {nombre}
                             </h5>
                             <div className="flex items-center justify-between">
-                                <span className="text-3xl font-bold text-gray-900 dark:text-white">
+                                <span className="text-3xl font-bold text-gray-900 ">
                                     $ {precio}
                                 </span>
                                 <Link to={`/categoria/:categoria/${id}`}>

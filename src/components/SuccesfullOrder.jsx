@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import ConfettiExplosion from "react-confetti-explosion";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 import { useTimeout } from "../hook/useTimeout";
 import { Button } from "./Button";
@@ -53,9 +53,9 @@ export const SuccesfullOrder = () => {
                     <span className="font-medium">{id}</span>
                 </p>
                 <div className="flex justify-center md:justify-start">
-                    <Button size="lg" href="/">
-                        Volver al inicio
-                    </Button>
+                    <Link to="/">
+                        <Button size="lg">Volver al inicio</Button>
+                    </Link>
                 </div>
             </div>
         </div>

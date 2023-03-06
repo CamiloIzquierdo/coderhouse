@@ -9,7 +9,8 @@ import { BsTrash } from "react-icons/bs";
 
 export const CartWidget = () => {
     const [openCartDescription, setOpenCartDescription] = useState(false);
-    const { cartItems, eliminarProducto } = useContext(CartContext);
+    const { cartItems, eliminarProducto, setCartItems } =
+        useContext(CartContext);
 
     const navigate = useNavigate();
 
@@ -112,7 +113,7 @@ export const CartWidget = () => {
                         </Button>
                         <Button
                             btnColor="tertiary"
-                            onClick={() => navigate("/cart")}
+                            onClick={() => setCartItems([])}
                         >
                             <div className="flex gap-1">
                                 <BsTrash className="text-xl font-bold" />

@@ -14,7 +14,7 @@ export const MorePurchased = () => {
 
         setTimeout(() => {
             setIsLoading(false);
-        }, 40000);
+        }, 290);
 
         setItems(productData);
         const purchaseCounts = new Map();

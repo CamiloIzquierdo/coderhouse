@@ -54,7 +54,9 @@ export const SuccesfullOrder = () => {
                 </p>
                 <div className="flex justify-center md:justify-start">
                     <Link to="/">
-                        <Button size="lg">Volver al inicio</Button>
+                        <Button onClick={() => setCartItems([])} size="lg">
+                            Volver al inicio
+                        </Button>
                     </Link>
                 </div>
             </div>

@@ -10,7 +10,7 @@ export const Modal = ({ children, visible, onClose }) => {
     const handleClose = () => {
         setTimeout(() => {
             onClose();
-        }, 150);
+        }, 2000);
     };
 
     return (

@@ -38,28 +38,6 @@ export const FinalForm = () => {
             },
         });
 
-        /* // Paso 1
-        const cartQuantities = {};
-        cartItems.forEach((cartItem) => {
-            if (cartItem.id in cartQuantities) {
-                cartQuantities[cartItem.id] += cartItem.quant;
-            } else {
-                cartQuantities[cartItem.id] = cartItem.quant;
-            }
-        });
-
-        // Paso 2 y 3
-        const updatedItems = items.map((item) => {
-            if (item.id in cartQuantities) {
-                return {
-                    ...item,
-                    stock: item.stock - cartQuantities[item.id],
-                };
-            }
-            return item;
-        });
- */
-
         if (id) {
             navigate(`/orden/${id}`);
         }

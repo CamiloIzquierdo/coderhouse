@@ -6,10 +6,16 @@ import { ShowItems } from "./ShowItems";
 
 export const MorePurchased = () => {
     const [morePurchased, setMorePurchased] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
     const { setItems } = useContext(GlobalContext);
 
     const getPurchasedItems = async () => {
         const productData = await usersService.getAll();
+
+        setTimeout(() => {
+            setIsLoading(false);
+        }, 40000);
+
         setItems(productData);
         const purchaseCounts = new Map();
         for (const product of productData) {
@@ -32,5 +38,5 @@ export const MorePurchased = () => {
         getPurchasedItems();
     }, []);
 
-    return <ShowItems productData2={morePurchased} />;
+    return <ShowItems productData2={morePurchased} isLoading={isLoading} />;
 };

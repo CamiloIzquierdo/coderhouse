@@ -52,7 +52,7 @@ export const ItemCount = ({ addToCart, item }) => {
                     </span>
 
                     {dropdown ? (
-                        <ul className="absolute mt-2 rounded-xl shadow-lg bg-white text-black w-[102%] left-[-2px] scrollbar justify-start flex flex-col max-h-[125px] overflow-y-scroll">
+                        <ul className="absolute mt-2 rounded-xl shadow-lg bg-white text-black w-[102%] left-[-2px] scrollbar justify-start flex flex-col max-h-[125px] overflow-y-scroll z-10">
                             {getStockForMakeList.map((index) => {
                                 const totalIndex = index + 1;
 

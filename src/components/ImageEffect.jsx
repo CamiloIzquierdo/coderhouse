@@ -1,10 +1,12 @@
 import { useMemo } from "react";
 import { Link } from "react-router-dom";
+import { Skeleton } from "./Skeleton";
 
 export const ImageEffect = ({
     productData = [],
     showCategory = false,
     size = "square",
+    isLoading = true,
 }) => {
     const ImageSize = useMemo(() => {
         switch (size) {
@@ -29,29 +31,35 @@ export const ImageEffect = ({
                         key={id}
                         className="relative group cursor-pointer drop-shadow-md rounded-md max-w-xs "
                     >
-                        <Link
-                            to={`${
-                                showCategory
-                                    ? "/categoria/" + categoria
-                                    : "/categoria/" + categoria + "/" + id
-                            }`}
-                        >
-                            <img
-                                src={image_b}
-                                alt={`Imagen de ${nombre}`}
-                                className={`relative top-0 left-0 group-hover:z-1 ${ImageSize} object-cover rounded-md`}
-                                width={200}
-                                height={200}
-                            />
+                        {isLoading ? (
+                            <Skeleton>
+                                <div className="flex w-80 h-80"></div>
+                            </Skeleton>
+                        ) : (
+                            <Link
+                                to={`${
+                                    showCategory
+                                        ? "/categoria/" + categoria
+                                        : "/categoria/" + categoria + "/" + id
+                                }`}
+                            >
+                                <img
+                                    src={image_b}
+                                    alt={`Imagen de ${nombre}`}
+                                    className={`relative top-0 left-0 group-hover:z-1 ${ImageSize} object-cover rounded-md`}
+                                    width={200}
+                                    height={200}
+                                />
 
-                            <img
-                                src={image_f}
-                                alt={`Imagen de ${nombre}`}
-                                className={`absolute top-0 left-0 group-hover:hidden group-hover:z-0 ${ImageSize} object-cover rounded-md`}
-                                width={200}
-                                height={200}
-                            />
-                        </Link>
+                                <img
+                                    src={image_f}
+                                    alt={`Imagen de ${nombre}`}
+                                    className={`absolute top-0 left-0 group-hover:hidden group-hover:z-0 ${ImageSize} object-cover rounded-md`}
+                                    width={200}
+                                    height={200}
+                                />
+                            </Link>
+                        )}
                         {showCategory ? (
                             <h1 className="font-bold absolute bottom-3 w-full flex justify-center bg-black/80 text-white py-2 z-20">
                                 {categoria.toUpperCase()}

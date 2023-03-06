@@ -3,6 +3,7 @@ import { BannerHome } from "../assets";
 import { ImageEffect } from "../components/ImageEffect";
 import { ListaRopa } from "../components/ListaRopa";
 import { MorePurchased } from "../components/MorePurchased";
+import { Skeleton } from "../components/Skeleton";
 import { Title } from "../components/Title";
 
 export const Home = () => {
@@ -13,11 +14,15 @@ export const Home = () => {
                     <img src={BannerHome} alt="" />
                 </Link>
             </div>
-            <div className="w-full">
+            <div className="w-full ">
                 <Title title="Categorias" />
-                <ImageEffect productData={ListaRopa} showCategory={true} />
+                <ImageEffect
+                    productData={ListaRopa}
+                    showCategory={true}
+                    isLoading={false}
+                />
             </div>
-            <div>
+            <div className="w-full">
                 <Title title="Productos destacados" />
                 <MorePurchased />
             </div>

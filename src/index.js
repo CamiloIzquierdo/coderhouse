@@ -9,7 +9,7 @@ import { initializeApp } from "firebase/app";
 import { GlobalProvider } from "./context/GlobalContext";
 
 const firebaseConfig = {
-    apiKey: process.env.REACT_APP_APIKEY,
+    apiKey: "AIzaSyBSNyggutf-NlnhgjldQwbZVfktlp1rIII",
     authDomain: "ecommerce-camilo.firebaseapp.com",
     projectId: "ecommerce-camilo",
     storageBucket: "ecommerce-camilo.appspot.com",

@@ -32,7 +32,7 @@ export const Navbar = () => {
                 <Link to="/" className="flex items-center">
                     <img
                         src={Images.Reegod}
-                        className="h-6 mr-3 sm:h-10"
+                        className="h-10 mx-4 items-center sm:h-12 md:mx-1 "
                         alt="Flowbite Logo"
                     />
                     <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white"></span>

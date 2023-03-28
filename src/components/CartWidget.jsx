@@ -41,25 +41,27 @@ export const CartWidget = () => {
 
     return (
         <div className="relative" onClick={clickOutSide}>
-            <button
-                onClick={() => setOpenCartDescription(!openCartDescription)}
-                className="dropdown__button"
-            >
-                <img
-                    src={Images.CartIcon}
-                    alt="Cart"
-                    width={20}
-                    className="dropdown__image"
-                />
-            </button>
-            <span className="dropdown__span top-[-8px] right-[-7px] text-white absolute bg-red-500 rounded-full text-[10px] font-bold w-[15px] h-[15px] flex items-center justify-center">
-                {cartItems.length}
-            </span>
+            <div className="flex">
+                <button
+                    onClick={() => setOpenCartDescription(!openCartDescription)}
+                    className="dropdown__button"
+                >
+                    <img
+                        src={Images.CartIcon}
+                        alt="Cart"
+                        width={20}
+                        className="dropdown__image"
+                    />
+                </button>
+                <span className="dropdown__span top-[-8px] right-[-7px] text-white absolute bg-red-500 rounded-full text-[10px] font-bold w-[15px] h-[15px] flex items-center justify-center">
+                    {cartItems.length}
+                </span>
+            </div>
 
             <ul
                 className={`dropdown__list dropdown__close ${
                     openCartDescription ? "" : "hidden"
-                } absolute right-2 bg-white shadow-lg p-2 rounded-md top-6 flex gap-2 flex-col`}
+                } absolute left-0 bg-white shadow-lg p-2 rounded-md top-6 flex gap-2 flex-col md:left-[-200px] md:absolute md:top-10`}
             >
                 <DataCheck
                     data={cartItems}

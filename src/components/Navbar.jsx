@@ -60,7 +60,7 @@ export const Navbar = () => {
                     }  md:block md:w-auto w-screen pb-3 md:pb-0`}
                     id="navbar-dropdown"
                 >
-                    <ul className="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                    <ul className="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:gap-2 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                         <li>
                             <Link
                                 to="/"
@@ -77,7 +77,7 @@ export const Navbar = () => {
                                 onClick={() => setDropDown(!dropDown)}
                                 className="dropdown__close flex relative items-center justify-center w-full py-2 pl-3 pr-4 font-medium text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
                             >
-                                <span />
+                                <span className="" />
                                 Nuestra ropa
                                 <img
                                     src={Images.Arrow}
@@ -135,9 +135,8 @@ export const Navbar = () => {
                                 </ul>
                             </div>
                         </li>
-                        <li></li>
 
-                        <li className="">
+                        <li className="flex mt-3 md:mt-0 ">
                             <CartWidget />
                         </li>
                     </ul>

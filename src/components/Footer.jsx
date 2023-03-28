@@ -4,7 +4,7 @@ import { Linkedin, GitHub } from "../assets";
 export const Footer = () => {
     const currentDate = new Date();
     return (
-        <footer className="bg-slate-900 text-white px-4 pt-6 pb-2 gap-4 h-24 flex flex-col">
+        <footer className="bg-slate-900 text-white px-4 md:pt-6 pt-2 pb-2 gap-4 h-24 flex flex-col">
             <section className="flex justify-center">
                 <ul className="flex gap-4 underline">
                     <Link to="/">

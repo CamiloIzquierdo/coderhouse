@@ -50,12 +50,12 @@ export const ItemDetail = () => {
 
     return (
         <div className="flex flex-col w-100vh gap-3 items-center">
-            <div className="flex-col flex w-full justify-center gap-10 md:flex-row bg-white p-5 rounded-xl md:h-[450px] h-[620px] max-w-[1300px]">
+            <div className="flex-col flex w-full justify-center gap-10 md:flex-row bg-white p-5 rounded-xl sm:h-[450px] h-[650px] max-w-[1300px]">
                 <div className="flex-1 relative flex justify-center">
                     <img
                         src={image_f}
                         alt={`Imagen de ${nombre}`}
-                        className="max-h-[350px] object-cover cursor-zoom-in"
+                        className="md:max-h-[350px] max-h-[300px] object-cover cursor-zoom-in"
                         onClick={() => setOpenModal(true)}
                     />
                     <Modal

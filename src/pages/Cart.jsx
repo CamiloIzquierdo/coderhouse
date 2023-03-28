@@ -16,7 +16,7 @@ export const Cart = () => {
     }
 
     return (
-        <div className="flex gap-20 p-10 w-full">
+        <div className="flex gap-20 p-10 md:flex-row flex-col ">
             <div className="flex flex-[66%] flex-col gap-5">
                 {cartItems.map(
                     ({
@@ -29,23 +29,22 @@ export const Cart = () => {
                     }) => (
                         <div
                             key={id}
-                            className="flex gap-5 justify-between items-center w-full h-full bg-white rounded-md"
+                            className="flex gap-5 justify-between flex-col md:flex-row items-center md:w-[100vh] h-full bg-white rounded-md w-full"
                         >
                             <img
                                 src={image_f}
                                 alt=""
-                                width={200}
-                                className="rounded-tl-md rounded-bl-md h-full object-cover"
+                                className="rounded-tl-md rounded-bl-md h-full object-cover w-40 mt-2 md:w-[200px] md:mt-0"
                             />
 
                             <div className="flex flex-col justify-between items-center py-5 h-full px-5 w-full">
                                 <div className="flex gap-10 w-full justify-between">
-                                    <div className="flex flex-col gap-4 items-start h-full">
-                                        <h1 className="text-xl font-semibold">
+                                    <div className="flex flex-col gap-4 items-start h-full justify-center">
+                                        <h1 className="md:text-xl text-sm text-center font-semibold">
                                             {nombre}
                                         </h1>
 
-                                        <p>{descripcion}</p>
+                                        {/* <p>{descripcion}</p> */}
                                     </div>
                                     <div className="h-full gap-4 flex flex-col">
                                         <h1 className="text-xl font-semibold">
@@ -55,7 +54,7 @@ export const Cart = () => {
                                         <p>${precio}</p>
                                     </div>
                                 </div>
-                                <div className="flex gap-5">
+                                <div className="flex gap-5 mt-2 md:mt-0">
                                     <button
                                         className="text-blue-400 cursor-pointer flex gap-2 items-center hover:text-red-500
                                 "

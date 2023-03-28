@@ -43,8 +43,6 @@ export const Cart = () => {
                                         <h1 className="md:text-xl text-sm text-center font-semibold">
                                             {nombre}
                                         </h1>
-
-                                        {/* <p>{descripcion}</p> */}
                                     </div>
                                     <div className="h-full gap-4 flex flex-col">
                                         <h1 className="text-xl font-semibold">

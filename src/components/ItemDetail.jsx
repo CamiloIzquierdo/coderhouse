@@ -50,7 +50,7 @@ export const ItemDetail = () => {
 
     return (
         <div className="flex flex-col w-100vh gap-3 items-center">
-            <div className="flex-col flex w-full justify-center gap-10 md:flex-row bg-white p-5 rounded-xl sm:h-[450px] h-[650px] max-w-[1300px]">
+            <div className="flex-col flex w-full justify-center gap-10 md:flex-row bg-white p-5 rounded-xl sm:h-[650px] md:h-[500px] h-[650px] max-w-[1300px] ">
                 <div className="flex-1 relative flex justify-center">
                     <img
                         src={image_f}
